@@ -76,13 +76,22 @@ que intente quitar el libro con el título especificado. Si no se encuentra el l
 
 # Escribe tu código aquí
 def quitar_libro(libros, titulo):
-    for libro in libros:
-        if libro['titulo'] == titulo:
-                      
-
-
+    libro_encontrado = False
+    try:
+        for index, libro in enumerate(libros):
+            if libro['titulo'] == titulo:
+                libros.pop(index)
+                libro_encontrado = True
+                print(f"El libro {titulo}, ha sido eliminado con exito")
+                break
+        if not libro_encontrado:
+            raise ValueError("El libro no ha sido encontrado")
+    except ValueError as e:
+        print(e)
+    return libros
 
 # Prueba la función con algunos valores
+quitar_libro(libros, "prueba")
 
 
 """
