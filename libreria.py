@@ -156,6 +156,19 @@ que retorne `True` si el libro existe en la lista, y `False` en caso contrario.
 """
 
 # Escribe tu código aquí
+def existe_libro(libros, titulo):
+    if buscar_libro(libros, titulo):
+        return True
+    else:
+        return False
+
+# modo simplificado
+def existe_libro_2(libros, titulo):
+    return bool(buscar_libro(libros, titulo))
 
 # Prueba la función con algunos valores
 
+print(existe_libro(libros_inventario, "Libro 3"))
+print(existe_libro(libros_inventario, "maria"))
+print(existe_libro_2(libros_inventario, "Libro 3"))
+print(existe_libro_2(libros_inventario, "maria"))
