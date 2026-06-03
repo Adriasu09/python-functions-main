@@ -102,7 +102,28 @@ que retorne un diccionario con la cantidad de libros por autor.
 
 # Escribe tu código aquí
 
+def crear_inventario(libros):
+    inventario = {}
+    for libro in libros:
+        autor = libro['autor']
+        if autor in inventario:
+            inventario[autor] += 1
+        else:
+            inventario[autor] = 1
+    return inventario
+
 # Prueba la función con algunos valores
+
+libros_inventario = [
+    {"titulo": "Libro 1", "autor": "maria"},
+    {"titulo": "Libro 2", "autor": "nana"},
+    {"titulo": "Libro 3", "autor": "maria"},
+    {"titulo": "Libro 4", "autor": "Luna"},
+    {"titulo": "Libro 5", "autor": "maria"},
+    {"titulo": "Libro 6", "autor": "nana"},
+]
+
+print(crear_inventario(libros_inventario))
 
 
 """
