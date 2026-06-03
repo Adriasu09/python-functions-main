@@ -125,7 +125,6 @@ libros_inventario = [
 
 print(crear_inventario(libros_inventario))
 
-
 """
 --- Ejercicio 6: Función que Retorna una Lista ---
 Crea una función llamada `libros_por_autor` que acepte una lista de diccionarios `libros` y un `autor` y 
@@ -133,8 +132,22 @@ que retorne una lista con los títulos de los libros escritos por el autor espec
 """
 
 # Escribe tu código aquí
+def libros_por_autor(libros, autor):
+    libros_por_autor = []
+    for libro in libros:
+        if libro['autor'] == autor:
+            libros_por_autor.append(libro['titulo'])
+    return libros_por_autor
+
+# forma simplificada como un filter + .map en js
+def libros_por_autor_2(libros, autor):
+    return [libro['titulo'] for libro in libros if libro['autor'] == autor]
+
 
 # Prueba la función con algunos valores
+
+print(libros_por_autor(libros_inventario, "maria"))
+print(libros_por_autor_2(libros_inventario, "maria"))
 
 """
 --- Ejercicio 7: Función que Retorna un Booleano ---
